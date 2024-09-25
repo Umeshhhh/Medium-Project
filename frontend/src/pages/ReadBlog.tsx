@@ -19,7 +19,7 @@ export default function ReadBlog(){
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        axios.get('https://backend.umeshkumaruk4376.workers.dev/api/v1/blog/authCheck', {
+        axios.get('', {
             headers: {
                 authorization: localStorage.getItem('token')
             }
@@ -28,7 +28,7 @@ export default function ReadBlog(){
         }).catch(() => {
             navigate('/');
         })
-        axios.get('https://backend.umeshkumaruk4376.workers.dev/api/v1/blog/' + id, {
+        axios.get('' + id, {
             headers: {
                 authorization: localStorage.getItem('token')
             }

@@ -13,7 +13,7 @@ export default function NewBlogCreate(){
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get('https://backend.umeshkumaruk4376.workers.dev/api/v1/blog/authCheck', {
+        axios.get('', {
             headers: {
                 authorization: localStorage.getItem('token')
             }
@@ -26,7 +26,7 @@ export default function NewBlogCreate(){
 
     function publish(){
 
-        axios.post('https://backend.umeshkumaruk4376.workers.dev/api/v1/blog', {
+        axios.post('', {
             title: title,
             content: content
         },{
@@ -39,7 +39,7 @@ export default function NewBlogCreate(){
 
         })
 
-        axios.put('https://backend.umeshkumaruk4376.workers.dev/api/v1/blog/published', {
+        axios.put('', {
             id: blogId,
             published: true
         },{
@@ -55,7 +55,7 @@ export default function NewBlogCreate(){
 
     function saveDraft(){
 
-        axios.post('https://backend.umeshkumaruk4376.workers.dev/api/v1/blog', {
+        axios.post('', {
             title: title,
             content: content
         },{
@@ -68,7 +68,7 @@ export default function NewBlogCreate(){
 
         })
 
-        axios.put('https://backend.umeshkumaruk4376.workers.dev/api/v1/blog/published', {
+        axios.put('', {
             id: blogId,
             published: false
         },{

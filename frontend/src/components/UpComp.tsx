@@ -44,7 +44,7 @@ export default function UpComp(){
         setIsSpin(true);
         setBrdrClr(false);
         setButtonClick('Signing up...');
-        axios.post('https://backend.umeshkumaruk4376.workers.dev/api/v1/user/userFind',inputs)
+        axios.post('',inputs)
         .then(() => {
             emailVerify();
         }).catch((e) => {
@@ -72,7 +72,7 @@ export default function UpComp(){
 
     function signingUp(){
 
-        axios.post('https://backend.umeshkumaruk4376.workers.dev/api/v1/user/signUp',inputs)
+        axios.post('',inputs)
         .then((res) => {
             localStorage.setItem('token', "Bearer " + res.data.token);
             setTimeout(() => {
@@ -111,7 +111,7 @@ export default function UpComp(){
             reply_to: inputs.email,
             message: "Find the file attached"
         }
-        emailjs.send('service_fxdnr6v', 'template_22egd0e', tempPara, {publicKey: 'ZYVRuDJHZJaF0KE-X'}).then(
+        emailjs.send('', '', tempPara, {publicKey: ''}).then(
             () => {
                 setOtpVisible(true);
             },

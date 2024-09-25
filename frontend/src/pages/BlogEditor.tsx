@@ -17,7 +17,7 @@ export default function BlogEditor(){
     const id = useRecoilValue(blogId);
 
     useEffect(() => {
-        axios.get('https://backend.umeshkumaruk4376.workers.dev/api/v1/blog/authCheck', {
+        axios.get('', {
             headers: {
                 authorization: localStorage.getItem('token')
             }
@@ -26,7 +26,7 @@ export default function BlogEditor(){
         }).catch(() => {
             navigate('/');
         })
-        axios.get('https://backend.umeshkumaruk4376.workers.dev/api/v1/blog/' + id, {
+        axios.get('' + id, {
             headers: {
                 authorization: localStorage.getItem('token')
             }
@@ -41,7 +41,7 @@ export default function BlogEditor(){
 
     function savingDraft(){
 
-        axios.put('https://backend.umeshkumaruk4376.workers.dev/api/v1/blog', {
+        axios.put('', {
             id: id,
             title: title,
             content: content
@@ -55,7 +55,7 @@ export default function BlogEditor(){
 
         })
 
-        axios.put('https://backend.umeshkumaruk4376.workers.dev/api/v1/blog/published', {
+        axios.put('', {
             id: id,
             published: false
         },{
@@ -72,7 +72,7 @@ export default function BlogEditor(){
 
     function publishing(){
 
-        axios.put('https://backend.umeshkumaruk4376.workers.dev/api/v1/blog', {
+        axios.put('', {
             id: id,
             title: title,
             content: content
@@ -86,7 +86,7 @@ export default function BlogEditor(){
 
         })
 
-        axios.put('https://backend.umeshkumaruk4376.workers.dev/api/v1/blog/published', {
+        axios.put('', {
             id: id,
             published: true
         },{

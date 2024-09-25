@@ -38,7 +38,7 @@ export default function InComp(){
         setIsSpin(true);
         setBrdrClr(false);
         setClick(false);
-        axios.post('https://backend.umeshkumaruk4376.workers.dev/api/v1/user/signIn',inputs)
+        axios.post('',inputs)
         .then((res) => {
             localStorage.setItem('token', "Bearer " + res.data.token);
             setTimeout(() => {

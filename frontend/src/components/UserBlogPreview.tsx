@@ -24,7 +24,7 @@ export default function UserBlogPreview({authorName, date, title, content, i, id
     const [deleteVisible, setDeleteVisible] = useState(false);
 
     function publish(){
-        axios.put('https://backend.umeshkumaruk4376.workers.dev/api/v1/blog/published', {
+        axios.put('', {
             id: id,
             published: true
         },{
@@ -40,7 +40,7 @@ export default function UserBlogPreview({authorName, date, title, content, i, id
 
     function deleteBlog(){
         console.log("In deleteBlog")
-        axios.delete('https://backend.umeshkumaruk4376.workers.dev/api/v1/blog',{
+        axios.delete('',{
             headers: {
                 authorization: localStorage.getItem('token')
             },
