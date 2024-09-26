@@ -118,8 +118,9 @@ export default function Dashboard(){
                                         initial={{opacity: 0, scale: 0.8}}
                                         animate={{opacity: 1, scale: 1}}
                                         exit={{opacity: 0, scale: 0.8}}
-                                        className="h-96 w-full flex place-content-center items-center">
+                                        className="relative h-96 w-full flex place-content-center items-center">
                                         <h1 className="text-3xl font-semibold text-gray-700">No Blogs to show</h1>
+                                        <img className="absolute top-0 -left-96 h-52 w-42" src="https://blush.design/api/download?shareUri=FJwj1TvxzFN5-x7j&c=New%2520Palette%25201_0%7Effffff&w=800&h=800&fm=png" alt="SplashImage" />
                                     </motion.div>
                                 }
                             </AnimatePresence>
