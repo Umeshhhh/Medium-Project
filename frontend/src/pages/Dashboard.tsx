@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import BlogPreview from "../components/BlogPreview";
 import UserBlogPreview from "../components/UserBlogPreview";
 import BlogPreviewSkeleton from "../components/BlogPreviewSkeleton";
+import Robot from "../3d-components/Robot";
 
 export default function Dashboard(){
 
@@ -45,9 +46,12 @@ export default function Dashboard(){
     },[forYouVisible])
 
     return(
-        <div className="flex flex-col min-h-screen max-w-full">
+        <div className="relative flex flex-col min-h-screen max-w-full overflow-x-hidden">
             <Header name={userName} />
-            <div className="h-full w-full mt-20 flex flex-col items-center px-52">
+            <div className="absolute top-0 w-full h-72 px-52">
+                <Robot />
+            </div>
+            <div className="relative h-full w-full mt-20 flex flex-col items-center px-52">
                 <div className="flex items-center w-full border-b-2 gap-1 mt-10 mb-5">
                     <div className="">
                         <motion.div
@@ -90,7 +94,7 @@ export default function Dashboard(){
                 </div>
                 <AnimatePresence>
                     {forYouVisible &&
-                        <div className="absolute top-44 px-52 mt-10">
+                        <div className="absolute top-20 px-52 mt-10 bg-white">
                             {blogArray.map((blog: any, i) => {
                                 if(blog.published && blog.author.id != userId){
                                     return <BlogPreview key={i} title={blog.title} content={blog.content} date={blog.date} authorName={blog.author.name} i={i} id={blog.id} />
@@ -106,7 +110,7 @@ export default function Dashboard(){
                 </AnimatePresence>
                 <AnimatePresence>
                     {yourBlogVisible &&
-                        <div>
+                        <div className="">
                             {blogArray.map((blog: any, i) => {
                                 if(blog.author.id == userId){
                                     return <UserBlogPreview key={i} isPublished={blog.published} title={blog.title} id={blog.id} content={blog.content} date={blog.date} authorName={blog.author.name} i={i} />
@@ -118,9 +122,9 @@ export default function Dashboard(){
                                         initial={{opacity: 0, scale: 0.8}}
                                         animate={{opacity: 1, scale: 1}}
                                         exit={{opacity: 0, scale: 0.8}}
-                                        className="relative h-96 w-full flex place-content-center items-center">
-                                        <h1 className="text-3xl font-semibold text-gray-700">No Blogs to show</h1>
-                                        <img className="absolute top-0 -left-96 h-52 w-42" src="https://blush.design/api/download?shareUri=FJwj1TvxzFN5-x7j&c=New%2520Palette%25201_0%7Effffff&w=800&h=800&fm=png" alt="SplashImage" />
+                                        className="relative h-full w-screen mt-3 bg-white flex place-content-center items-center">
+                                        <h1 className="text-3xl h-96 flex items-center font-semibold text-gray-700">No Blogs to show</h1>
+                                        <img className="absolute top-0 z-50 left-32 h-52 w-42" src="https://blush.design/api/download?shareUri=FJwj1TvxzFN5-x7j&c=New%2520Palette%25201_0%7Effffff&w=800&h=800&fm=png" alt="SplashImage" />
                                     </motion.div>
                                 }
                             </AnimatePresence>
