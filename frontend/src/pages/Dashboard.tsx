@@ -24,7 +24,7 @@ export default function Dashboard(){
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        axios.get('', {
+        axios.get('https://backend.umeshkumaruk4376.workers.dev/api/v1/blog/bulk', {
             headers: {
                authorization: localStorage.getItem('token')
             }

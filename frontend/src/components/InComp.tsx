@@ -38,7 +38,7 @@ export default function InComp(){
         setIsSpin(true);
         setBrdrClr(false);
         setClick(false);
-        axios.post('',inputs)
+        axios.post('https://backend.umeshkumaruk4376.workers.dev/api/v1/user/signIn',inputs)
         .then((res) => {
             localStorage.setItem('token', "Bearer " + res.data.token);
             setTimeout(() => {
@@ -60,15 +60,15 @@ export default function InComp(){
                 setTimeout(() => {
                     setPopVisible(false);
                 },2000)
-            },2000)
+            },1000)
             if(e.status == 403){
                 setTimeout(() => {
                     setErrorMssg('*User not found');
-                },2000)
+                },1000)
             }else{
                 setTimeout(() => {
                     setErrorMssg('*Invalid inputs');
-                },2000)
+                },1000)
             }
         })
     }

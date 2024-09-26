@@ -3,8 +3,9 @@ compatibility_date = "2024-09-17"
 compatibility_flags = [ "nodejs_compat" ]
 
 [vars]
-DATABASE_URL=""
-JWT_SECRET = ""
+DATABASE_URL="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiN2NiNGUwNTctZDEzYy00ZmQ4LThmYzYtZWI4MTIzOGQyNmEzIiwidGVuYW50X2lkIjoiMTJiMTRmYjc2MWQ4Y2E5YjlkOTY3ZTgwODI1YzVkYjlhZjgzMjAxYjRiZGRkMjgxYTI2NjQzMDUyMmQ1ZGNmNCIsImludGVybmFsX3NlY3JldCI6ImJlNWU4NDNkLTJmODgtNGRiNC1iZjI2LWRhZDcxZTgzMWRmMiJ9.8mkClCzqHBZ9icWmgXitwPJFqTSUQmtfyZ7l02m8ba8"
+# DATABASE_URL="postgresql://neondb_owner:wskqMOyV4E0U@ep-tiny-flower-a5hrsyq3.us-east-2.aws.neon.tech/MediumDB?sslmode=require"
+JWT_SECRET = "My@%$ecret%Key"
 
 # [[kv_namespaces]]
 # binding = "MY_KV_NAMESPACE"

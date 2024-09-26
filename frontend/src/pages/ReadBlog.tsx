@@ -19,7 +19,7 @@ export default function ReadBlog(){
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        axios.get('', {
+        axios.get('https://backend.umeshkumaruk4376.workers.dev/api/v1/blog/authCheck', {
             headers: {
                 authorization: localStorage.getItem('token')
             }
@@ -28,7 +28,7 @@ export default function ReadBlog(){
         }).catch(() => {
             navigate('/');
         })
-        axios.get('' + id, {
+        axios.get('https://backend.umeshkumaruk4376.workers.dev/api/v1/blog/' + id, {
             headers: {
                 authorization: localStorage.getItem('token')
             }
@@ -62,9 +62,10 @@ export default function ReadBlog(){
                             {content}
                         </p>
                     </div>
-                    <div className="p-7">
+                    <div className="p-7 flex flex-col">
                         <h1 className="text-md font-semibold">Author</h1>
                         <p className="text-xl font-bold mt-2">{"- "}{author}</p>
+                        <img className="mt-10" src="https://blush.design/api/download?shareUri=7SchoiH9A972E709&c=New%2520Palette%25201_0%7Effffff&w=800&h=800&fm=png" alt="blushRead" />
                     </div>
                 </div>
             }

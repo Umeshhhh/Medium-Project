@@ -4,7 +4,15 @@ export default function SideComp(){
 
     return(
         <motion.div
-            className="bg-slate-100 hidden flex-col w-full place-content-center pl-20 pr-12 md:flex"
+            style={{
+                backgroundImage: 'url(https://blush.design/api/download?shareUri=MjEGq_quG8p-6B_z&c=New%2520Palette%25201_0%7Effffff&w=800&h=800&fm=png)',
+                backgroundBlendMode: 'revert',
+                backgroundPositionY: '250px',
+                backgroundPositionX: '200px',
+                backgroundSize: '50%',
+                backgroundRepeat: 'no-repeat'
+            }}
+            className="bg-slate-100 hidden flex-col w-full place-content-start py-32 pl-20 pr-12 md:flex"
             >
             <h1 className="text-3xl font-bold">
                 {(`"The customer service i received was exceptional. The support team went above and beyond to address my concerns."`).split("").map((c, i) => {

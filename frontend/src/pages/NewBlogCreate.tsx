@@ -13,7 +13,7 @@ export default function NewBlogCreate(){
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get('', {
+        axios.get('https://backend.umeshkumaruk4376.workers.dev/api/v1/blog/authCheck', {
             headers: {
                 authorization: localStorage.getItem('token')
             }
@@ -26,7 +26,7 @@ export default function NewBlogCreate(){
 
     function publish(){
 
-        axios.post('', {
+        axios.post('https://backend.umeshkumaruk4376.workers.dev/api/v1/blog', {
             title: title,
             content: content
         },{
@@ -39,7 +39,7 @@ export default function NewBlogCreate(){
 
         })
 
-        axios.put('', {
+        axios.put('https://backend.umeshkumaruk4376.workers.dev/api/v1/blog/published', {
             id: blogId,
             published: true
         },{
@@ -55,7 +55,7 @@ export default function NewBlogCreate(){
 
     function saveDraft(){
 
-        axios.post('', {
+        axios.post('https://backend.umeshkumaruk4376.workers.dev/api/v1/blog', {
             title: title,
             content: content
         },{
@@ -68,7 +68,7 @@ export default function NewBlogCreate(){
 
         })
 
-        axios.put('', {
+        axios.put('https://backend.umeshkumaruk4376.workers.dev/api/v1/blog/published', {
             id: blogId,
             published: false
         },{
@@ -106,6 +106,11 @@ export default function NewBlogCreate(){
                     <textarea onChange={(e) => setTitle(e.target.value)} className="mt-10 h-auto border-l-2 p-4 text-3xl placeholder-gray-400 focus:outline-none px-5 resize-none" placeholder="Title" rows={1} typeof='text' />
                     <textarea onChange={(e) => setContent(e.target.value)} className="px-5 text-xl mt-2 focus:outline-none resize-none" placeholder="Tell your story..." rows={14} typeof='text' />
                 </div>
+                {/* <img 
+                    style={{
+                        transform: 'rotateY(180deg)'
+                    }}
+                    className="absolute top-72 right-8 z-0 h-44 w-40" src="https://blush.design/api/download?shareUri=QD6_7cdsk50iP3Rr&c=New%2520Palette%25201_0%7Effffff&w=800&h=800&fm=png" alt="blushImage" /> */}
             </div>
         </div>
     )
